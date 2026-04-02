@@ -13,24 +13,17 @@
 		}
 		public override string GetProfile()
 		{
-			return $"Name: {FirstName} {LastName}\n" +
-				   $"Birthday: {Birthday}\n" +
-				   $"Email: {Email}\n" +
-				   $"Employee ID: {EmployeeId}\n" +
-				   $"Department: {Department}\n" +
-				   $"Salary: {Salary:C}\n" +
-				   $"Hire Date: {HireDate}";
+			return $"Name: {FirstName} {LastName}\t Birthday: {Birthday}\t Email: {Email}\t Employee ID: {EmployeeId}\t Department: {Department}\t Salary: {Salary:C}\t Hire Date: {HireDate}";
 		}
 		public override string GetContactInfo()
 		{
-			return $"Email: {Email}\n" +
-				   $"Department: {Department}";
+			return $"Email: {Email}\t Department: {Department}";
 		}
 		public virtual decimal CalculateAnnualBonus()
 		{
 			if ((HireDate.Year % DateTime.Now.Year) % 5 == 0)
 			{
-				return (Salary * 0.05m) + Salary;
+				return Salary * 1.05m;
 			}
 			else
 			{

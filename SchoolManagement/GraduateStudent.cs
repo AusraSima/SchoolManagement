@@ -9,23 +9,25 @@
 		{
 			return base.GetRole();
 		}
-		public override string GetAcademicStanding()
+		public override string GetAcademicStanding(double GPA)
 		{
-			if (GPA >= 9.5)
+			switch (GPA)
 			{
-				return "Distinction";
-			}
-			else if (GPA >= 7.0)
-			{
-				return "Merit";
-			}
-			else if (GPA >= 4.0)
-			{
-				return "Pass";
-			}
-			else
-			{
-				return "At Risk";
+				case >= 9.5:
+					return "Distinction";
+					break;
+				case >= 7.0:
+					return "Merit";
+					break;
+				case >= 4.0:
+					return "Pass";
+					break;
+				case < 4.0:
+					return "At Risk";
+					break;
+				default:
+					return "Unknown";
+					break;
 			}
 		}
 	}

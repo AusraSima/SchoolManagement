@@ -12,13 +12,7 @@
 		}
 		public override string GetProfile()
 		{
-			return $"Name: {FirstName} {LastName}\n" +
-				   $"Birthday: {Birthday}\n" +
-				   $"Email: {Email}\n" +
-				   $"Student ID: {StudentId}\n" +
-				   $"Program: {Program}\n" +
-				   $"GPA: {GPA}\n" +
-				   $"Enrollment Year: {EnrollmentYear}";
+			return $"Name: {FirstName} {LastName}\t Birthday: {Birthday}\t Email: {Email}\t Student ID: {StudentId}\t Program: {Program}\t GPA: {GPA}\t Enrollment Year: {EnrollmentYear}";
 		}
 		public virtual string GetAcademicStanding(double GPA)
 		{
@@ -36,8 +30,10 @@
 				case < 4.0:
 					return "Academic Probation";
 					break;
+				default:
+					return "Unknown";
+					break;
 			}
-			return "Unknown";
 		}
 	}
 }

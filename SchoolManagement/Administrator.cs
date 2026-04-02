@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SchoolManagement
+﻿namespace SchoolManagement
 {
 	internal class Administrator : Staff
 	{
@@ -16,7 +10,7 @@ namespace SchoolManagement
 		}
 		public override string GetProfile()
 		{
-			return base.GetProfile() + $"\nOffice: {Office}\nResponsibilities: {string.Join(", ", Responsibilities)}";
+			return $"{base.GetProfile()}\t Office: {Office}\t Responsibilities: {string.Join(", ", Responsibilities)}";
 		}
 		public override decimal CalculateAnnualBonus()
 		{

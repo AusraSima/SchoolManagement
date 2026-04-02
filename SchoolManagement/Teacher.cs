@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SchoolManagement
+﻿namespace SchoolManagement
 {
 	internal class Teacher : Staff
 	{
@@ -17,13 +11,13 @@ namespace SchoolManagement
 		}
 		public override string GetProfile()
 		{
-			return base.GetProfile() + $"\nSubject Area: {SubjectArea}\nCourses Taught: {string.Join(", ", CoursesTaught)}\nTeaching Rating: {TeachingRating}";
+			return $"{base.GetProfile()}\t Subject Area: {SubjectArea}\t Courses Taught: {string.Join(", ", CoursesTaught)}\t Teaching Rating: {TeachingRating}";
 		}
 		public override decimal CalculateAnnualBonus()
 		{
 			if (TeachingRating >= 4.5)
 			{
-				return (Salary * 0.10m) + Salary;
+				return Salary * 1.10m;
 			}
 			else
 			{

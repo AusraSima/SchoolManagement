@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SchoolManagement
+﻿namespace SchoolManagement
 {
 	internal class HeadOfDepartment : Teacher
 	{
@@ -16,7 +10,7 @@ namespace SchoolManagement
 		}
 		public override string GetProfile()
 		{
-			return base.GetProfile() + $"\nTeam Size: {TeamSize}\nDepartment Vision: {DepartmentVision}";
+			return $"{base.GetProfile()}\t Team Size: {TeamSize}\t Department Vision: {DepartmentVision}";
 		}
 		public override string GetContactInfo()
 		{
@@ -26,7 +20,7 @@ namespace SchoolManagement
 		{
 			if (TeamSize >= 10)
 			{
-				return (Salary * 0.15m) + Salary;
+				return Salary * 1.15m;
 			}
 			else
 			{

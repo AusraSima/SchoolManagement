@@ -11,7 +11,7 @@
 		}
 		public override string GetProfile()
 		{
-			return base.GetProfile() + $"\nMinor: {Minor}\nNajor: {Major}\nTotal Credits: {TotalCredits}";
+			return $"{base.GetProfile()}\t Minor: {Minor}\t Major: {Major}\t Total Credits: {TotalCredits}";
 		}
 		public override string GetAcademicStanding(double GPA)
 		{
@@ -29,8 +29,10 @@
 				case < 4.0:
 					return "Freshman";
 					break;
+				default:
+					return "Unknown";
+					break;
 			}
-			return "Unknown";
 		}
 	}
 }
