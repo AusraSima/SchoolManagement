@@ -13,24 +13,25 @@
 		{
 			return base.GetProfile() + $"\nMinor: {Minor}\nNajor: {Major}\nTotal Credits: {TotalCredits}";
 		}
-		public override string GetAcademicStanding()
+		public override string GetAcademicStanding(double GPA)
 		{
-			if (GPA >= 9.5)
+			switch (GPA)
 			{
-				return "Senior";
+				case >= 9.5:
+					return "Senior";
+					break;
+				case >= 7.0:
+					return "Junior";
+					break;
+				case >= 4.0:
+					return "Sophomore";
+					break;
+				case < 4.0:
+					return "Freshman";
+					break;
 			}
-			else if (GPA >= 7.0)
-			{
-				return "Junior";
-			}
-			else if (GPA >= 4.0)
-			{
-				return "Sophomore";
-			}
-			else
-			{
-				return "Freshman";
-			}
+			return "Unknown";
 		}
 	}
 }
+
