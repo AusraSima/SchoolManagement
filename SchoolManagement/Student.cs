@@ -20,25 +20,24 @@
 				   $"GPA: {GPA}\n" +
 				   $"Enrollment Year: {EnrollmentYear}";
 		}
-		public virtual string GetAcademicStanding()
+		public virtual string GetAcademicStanding(double GPA)
 		{
-			if (GPA >= 9.5)
+			switch (GPA)
 			{
-				return "Dean's List";
+				case >= 9.5:
+					return "Dean's List";
+					break;
+				case >= 7.0:
+					return "Good Standing";
+					break;
+				case >= 4.0:
+					return "Satisfactory";
+					break;
+				case < 4.0:
+					return "Academic Probation";
+					break;
 			}
-			else if (GPA >= 7.0)
-			{
-				return "Good Standing";
-			}
-			else if (GPA >= 4.0)
-			{
-				return "Satisfactory";
-			}
-			else
-			{
-				return "Academic Probation";
-			}
-
+			return "Unknown";
 		}
 	}
 }

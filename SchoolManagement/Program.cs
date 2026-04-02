@@ -102,7 +102,7 @@
 			Console.WriteLine("List of students");
 			foreach (var student in students)
 			{
-				Console.WriteLine($"Academic Standing for {student.FirstName} {student.LastName}, {student.GPA}, {student.GetAcademicStanding()}");
+				Console.WriteLine($"Academic Standing for {student.FirstName} {student.LastName}, {student.GPA}, {student.GetAcademicStanding(student.GPA)}");
 				Console.WriteLine("------");
 			}
 		}
